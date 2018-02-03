@@ -92,7 +92,7 @@ This step reduces the amount of data that needs to be processed in the future st
 
 #### 4. Apply Gaussian blur
 
-In this step, I smoothed out the image using the Gaussian blur technique. Just like grey scaling, this step reduces noise and helps prepare for edge detection. The kernel size will determine how much blurring will occur. By experimentation, I have chosen kernel size of 5 to be a good balance that doesn't overly smooth out the image.
+In this step, I smoothed out the image using the Gaussian blur technique. Just like grey scaling, this step reduces noise and helps prepare for edge detection. The kernel size will determine how much blurring will occur. By experimentation, I have chosen kernel size of 5 (left image, kernel=5) to be a good balance that doesn't overly smooth out the image (right image, kernel=9). 
 
 ![alt text][image7] ![alt text][image7b]
 
