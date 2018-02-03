@@ -25,7 +25,6 @@ The goals / steps of this project are the following:
 [image10]: ./writeup_assets/output_32_1.png "hough transform"
 [image11]: ./writeup_assets/output_33_1.png "weighted"
 
-
 [image50]: ./writeup_assets/output_39_0.png "p1"
 [image51]: ./writeup_assets/output_39_1.png "p1"
 [image52]: ./writeup_assets/output_39_2.png "p1"
@@ -47,15 +46,7 @@ The goals / steps of this project are the following:
 [image74]: ./writeup_assets/output_43_4.png "p3"
 [image75]: ./writeup_assets/output_43_5.png "p3"
 
-
-[image51]: ./writeup_assets/output_43_1.png "p2"
-
-
 [image100]: ./writeup_assets/output_56_3.png "left right separated"
-
-
----
-
 
 ### Reflection
 
@@ -90,17 +81,17 @@ Once the image has been converted to the HSL colour space, I created a filter th
 
 After creating the two filter, I masked the original image with both of them to pick out only the colours that fit in yellow range and white range in the image.
 
-![alt text][image3] ![alt text][image4] ![alt text][image5]
+![alt text][image3] ![alt text][image4]
 
 #### 3. Convert to grey scale
 
-This step reduces the amount of data that needs to be processed in the future steps. In the current step, the image holds only white and yellow which will contrast very highly on the dark road in gray scale. Therefore, we can flatten the image to single dimension (gray scale) without losing important information. This will speed up the computation in the following steps.
+This step reduces the amount of data that needs to be processed in the future steps. In the current step, the image holds only white and yellow which will contrast very highly on the dark road in gray scale. Therefore, we can flatten the image to single dimension (gray scale) without losing important information. This will speed up the computation in the following steps. The image on the left shows the output of the original image masked with yellow and white HSL filter. The image on the right is the greyscaled version of the left image.
 
-![alt text][image6]
+![alt text][image5] ![alt text][image6]
 
 #### 4. Apply Gaussian blur
 
-In this step, I smoothed out the image with the Gaussian blur technique. Just like grey scaling, this step reduces noise and helps prepare for edge detection. The kernel size will determine how much blurring will occur. By experimentation, I have chosen kernel size of 5 to be a good balance that doesn't overly smooth out the image.
+In this step, I smoothed out the image using the Gaussian blur technique. Just like grey scaling, this step reduces noise and helps prepare for edge detection. The kernel size will determine how much blurring will occur. By experimentation, I have chosen kernel size of 5 to be a good balance that doesn't overly smooth out the image.
 
 ![alt text][image7]
 
@@ -154,11 +145,11 @@ Step 6-7
 
 Before we interpolate the lanes, we must classify them as left lane or right lane. This was simply done by calculating the slope of the line. Positive slope was classified as left lane where as negative slope was classified as right lane. I also neglected slopes that were smaller than certain threshold, as you can't have horizontal lane going across the road.
 
-![alt text][image100]
-
 #### 9. Interpolate lanes with linear regression
 
-Using the scipy library, I simply applied the `linregress()` function to interpolate each of left and right lanes. Linear regression is basically reducing the error region (least mean square) between the estimation of line against the actual points given to us from the Hough transform.
+Using the scipy library, I simply applied the `linregress()` function to interpolate each of left and right lanes. Linear regression is basically reducing the error region (least mean square) between the estimation of line against the actual points given to us from the Hough transform. The picture below shows the final result of the interpolated lanes.
+
+![alt text][image100]
 
 ### 2. Identify potential shortcomings with your current pipeline
 
