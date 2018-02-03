@@ -20,6 +20,7 @@ The goals / steps of this project are the following:
 [image5]: ./writeup_assets/output_23_1.png "hsl masked"
 [image6]: ./writeup_assets/output_25_1.png "grey scale"
 [image7]: ./writeup_assets/output_26_1.png "gaussian blur"
+[image7b]: ./writeup_assets/output_100.png "gaussian blur2"
 [image8]: ./writeup_assets/output_28_1.png "canny edge"
 [image9]: ./writeup_assets/output_30_1.png "region of interest"
 [image10]: ./writeup_assets/output_32_1.png "hough transform"
@@ -93,7 +94,7 @@ This step reduces the amount of data that needs to be processed in the future st
 
 In this step, I smoothed out the image using the Gaussian blur technique. Just like grey scaling, this step reduces noise and helps prepare for edge detection. The kernel size will determine how much blurring will occur. By experimentation, I have chosen kernel size of 5 to be a good balance that doesn't overly smooth out the image.
 
-![alt text][image7]
+![alt text][image7] ![alt text][image7b]
 
 #### 5. Canny edge detection
 
